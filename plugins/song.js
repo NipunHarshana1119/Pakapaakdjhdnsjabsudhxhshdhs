@@ -17,7 +17,7 @@ const {
     prepareWAMessageMedia,
     proto
 } = require('@whiskeysockets/baileys')
-const fs = require('fs, fs-extra')
+const fs = require('fs')
 const FileType = require('file-type')
 const { exec } = require('child_process');
 const { cmd, commands } = require("../command");
