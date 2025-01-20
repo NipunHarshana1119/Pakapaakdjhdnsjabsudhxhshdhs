@@ -17,7 +17,7 @@ const {
     prepareWAMessageMedia,
     proto
 } = require('@whiskeysockets/baileys')
-const fs = require('fs')
+const fs = require('fs, fs-extra')
 const FileType = require('file-type')
 const { exec } = require('child_process');
 const { cmd, commands } = require("../command");
@@ -34,7 +34,6 @@ const path = require('path');
 const yts = require("yt-search");
 const dl = require('@bochilteam/scraper')  
 const ytdl = require('yt-search');
-const fs = require('fs-extra');
 var videotime = 60000 // 1000 min
 const { updateEnv, readEnv } = require('../lib/database');
 const os = require("os")
