@@ -5792,4 +5792,3 @@ cmd(_0x4c04aa, async (_0x231979, _0x12b151, _0x116356, {
     _0x4db5ec("❌ *Error Accurated !!*\n\n" + _0xb01bf8);
   }
 });
-
