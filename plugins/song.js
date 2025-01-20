@@ -42,79 +42,116 @@ var api = new Esana();
 const DYXT_NEWS = require("@dark-yasiya/news-scrap");
 const newss = new DYXT_NEWS();
 
-async function ytmp4(_0x2f6b39, _0x42c817) {
+// Function to download YouTube videos in MP4 format
+async function ytmp4(url, format) {
   try {
-    if (!_0x2f6b39 || !_0x42c817) {
-      throw new Error("url and format parameters are required.");
+    if (!url || !format) {
+      throw new Error("URL and format parameters are required.");
     }
-    const _0x4736a2 = parseInt(_0x42c817.replace('p', ''), 0xa);
-    const _0x3d966e = {
-      'button': 0x1,
-      'start': 0x1,
-      'end': 0x1,
-      'format': _0x4736a2,
-      'url': _0x2f6b39
+
+    // Parse the format (e.g., "720p" -> 720)
+    const parsedFormat = parseInt(format.replace('p', ''), 10);
+
+    // Request parameters for the download API
+    const downloadParams = {
+      button: 1,
+      start: 1,
+      end: 1,
+      format: parsedFormat,
+      url: url,
     };
-    const _0x4394ec = {
-      'Accept': "*/*",
-      'Accept-Encoding': "gzip, deflate, br",
-      'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
-      'Origin': "https://loader.to",
-      'Referer': "https://loader.to",
-      'Sec-Ch-Ua': "\"Not-A.Brand\";v=\"99\", \"Chromium\";v=\"124\"",
-      'Sec-Ch-Ua-Mobile': '?1',
-      'Sec-Ch-Ua-Platform': "\"Android\"",
-      'Sec-Fetch-Dest': "empty",
-      'Sec-Fetch-Mode': "cors",
-      'Sec-Fetch-Site': "cross-site",
-      'User-Agent': "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36"
+
+    // Headers for the API request
+    const headers = {
+      Accept: "*/*",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      Origin: "https://loader.to",
+      Referer: "https://loader.to",
+      "Sec-Ch-Ua": '"Not-A.Brand";v="99", "Chromium";v="124"',
+      "Sec-Ch-Ua-Mobile": "?1",
+      "Sec-Ch-Ua-Platform": '"Android"',
+      "Sec-Fetch-Dest": "empty",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "cross-site",
+      "User-Agent":
+        "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
     };
-    const _0x22556a = await axios.get("https://ab.cococococ.com/ajax/download.php", {
-      'params': _0x3d966e,
-      'headers': _0x4394ec
-    });
-    const _0x2896cf = _0x22556a.data.id;
-    const _0x44fc6b = async () => {
-      const _0x1d750c = {
-        'id': _0x2896cf
-      };
+
+    // Send a request to initiate the download process
+    const response = await axios.get(
+      "https://ab.cococococ.com/ajax/download.php",
+      {
+        params: downloadParams,
+        headers: headers,
+      }
+    );
+
+    // Get the ID from the response
+    const downloadId = response.data.id;
+
+    // Function to check the download progress
+    const checkProgress = async () => {
+      const progressParams = { id: downloadId };
+
       try {
-        const _0x5e5c67 = await axios.get("https://p.oceansaver.in/ajax/progress.php", {
-          'params': _0x1d750c,
-          'headers': _0x4394ec
-        });
+        const progressResponse = await axios.get(
+          "https://p.oceansaver.in/ajax/progress.php",
+          {
+            params: progressParams,
+            headers: headers,
+          }
+        );
+
         const {
-          progress: _0x53deb8,
-          download_url: _0x145ecd,
-          text: _0x4f99c3
-        } = _0x5e5c67.data;
-        return _0x4f99c3 === 'Finished' ? _0x145ecd : (await new Promise(_0x425fca => setTimeout(_0x425fca, 0x3e8)), _0x44fc6b());
-      } catch (_0x5b1f1c) {
-        throw new Error("Error in progress check: " + _0x5b1f1c.message);
+          progress,
+          download_url: downloadUrl,
+          text: statusText,
+        } = progressResponse.data;
+
+        // If the download is finished, return the download URL
+        if (statusText === "Finished") {
+          return downloadUrl;
+        }
+
+        // Otherwise, wait 1 second and check again
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        return checkProgress();
+      } catch (error) {
+        throw new Error("Error in progress check: " + error.message);
       }
     };
-    return await _0x44fc6b();
-  } catch (_0x374084) {
-    console.error("Error:", _0x374084);
+
+    // Wait for the download to complete and return the final URL
+    return await checkProgress();
+  } catch (error) {
+    console.error("Error:", error);
     return {
-      'error': _0x374084.message
+      error: error.message,
     };
   }
 }
+
+// Export the function for external use
 module.exports = {
-  'ytmp4': ytmp4
+  ytmp4,
 };
-function extractYouTubeId(_0x14c96b) {
-  const _0x347f91 = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|playlist\?list=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-  const _0x5d6e8d = _0x14c96b.match(_0x347f91);
-  return _0x5d6e8d ? _0x5d6e8d[0x1] : null;
+
+// Function to extract the YouTube video ID from a URL
+function extractYouTubeId(url) {
+  const youtubeRegex =
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|playlist\?list=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(youtubeRegex);
+  return match ? match[1] : null;
 }
-function convertYouTubeLink(_0x48eb5f) {
-  const _0x18df7a = extractYouTubeId(_0x48eb5f);
-  if (_0x18df7a) {
-    return "https://www.youtube.com/watch?v=" + _0x18df7a;
+
+// Function to convert a YouTube link to a standard format
+function convertYouTubeLink(link) {
+  const videoId = extractYouTubeId(link);
+  if (videoId) {
+    return "https://www.youtube.com/watch?v=" + videoId;
   }
-  return _0x48eb5f;
+  return link;
 }
 cmd({
   'pattern': 'play',
