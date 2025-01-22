@@ -10,9 +10,9 @@ const {
 } = require("../lib/functions");
 
 const commandDetails = {
-  pattern: "song12",
+  pattern: "song",
   desc: "Download Song",
-  react: "🎵",
+  react: "🎧",
   use: ".song <YouTube URL>",
   category: "download",
   filename: __filename,
@@ -29,23 +29,24 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoUrl = video.url;
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
-    const downloadMessage = `
-      ☛ 𝗤𝗨𝗘𝗘𝗡 𝗦𝗣𝗥𝗜𝗞𝗬 𝗠𝗗 ☚
-      ╔══════════════════════
-      ║🎶 SONG DOWNLOAD 🎶
-      ╠══════════════════════
-      ║🎧 Song Name - ${videoTitle}
-      ╠══════════════════════
-      ║⌛ Ready to Download 
-      ║Reply Required Format
-      ╚══════════════════════
-      
-      1️⃣ AUDIO  MP3 TYPE 🎶
-      2️⃣ AUDIO  DOC TYPE 📂
-      3️⃣ AUDIO VOICE MODE 🎤
+    const downloadMessage = `╭━━━〔 *𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃* 〕━━━╮
 
-      > BY QUEEN SPRIKY MD ᵀᴹ
-    `;
+* *รσɳɠ ԃαɯɳʅσαԃιɳɠ 🎧*
+
+╰──────────────────────╯
+╭━┉┉┉┉┉┉┉┉┉┉┉┉━❐━⪼
+┇๏ *𝑻𝒊𝒕𝒍𝒆* -  _${yts.title}_
+┇๏ *𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏* - _${yts.timestamp}_
+┇๏ *𝑽𝒊𝒆𝒘𝒔* -  _${yts.views}_
+┇๏ *𝑨𝒖𝒕𝒉𝒐𝒓* -  _${yts.author.name}_
+┇๏ *𝑳𝒊𝒏𝒌* -  _${yts.url}_
+╰━┉┉┉┉┉┉┉┉┉┉┉┉━❑━⪼
+
+*1 |♢ 𝐀𝐔𝐃𝐈𝐎 𝐓𝐘𝐏𝐄*
+*2 |♢ 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓 𝐓𝐘𝐏𝐄*
+*3 |♢ 𝐕𝐎𝐈𝐂𝐄 𝐌𝐎𝐃𝐄*
+
+> *© 𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ✾*`;
 
     const axiosOptions = { responseType: "arraybuffer" };
     const thumbnailImage = Buffer.from(
@@ -54,18 +55,18 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     );
 
     const messageContext = {
-      image: { url: video.thumbnail || "https://files.catbox.moe/p5ghv5.jpeg" },
+      image: { url: video.thumbnail || "https://i.ibb.co/g98HkMY/8188.jpg" },
       caption: downloadMessage,
       contextInfo: {
         mentionedJid: [sender],
         externalAdReply: {
           showAdAttribution: true,
           containsAutoReply: true,
-          title: "QUEEN SPRIKY MD",
-          body: "© 𝗤𝗨𝗘𝗘𝗡 𝗦𝗣𝗥𝗜𝗞𝗬 𝗠𝗗 ᵀᴹ",
+          title: "QUEEN RASHU MD ✵",
+          body: "❀ 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃",
           previewType: "PHOTO",
           thumbnail: thumbnailImage,
-          sourceUrl: "https://whatsapp.com/channel/0029VajvrA2ATRSkEnZwMQ0p",
+          sourceUrl: "https://whatsapp.com/channel/0029Vb2GOyk6rsQwJSBa7T2h",
           mediaType: 1,
         },
       },
@@ -96,7 +97,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   audio: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
+                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
                 },
                 { quoted: newMessage }
               );
@@ -109,7 +110,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   document: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
+                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
                 },
                 { quoted: newMessage }
               );
