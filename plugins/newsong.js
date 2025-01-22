@@ -29,7 +29,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoUrl = video.url;
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
-    const downloadMessage = `╭*● 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 ●*
+    const downloadMessage = `*● 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 ●*
       ╔══════════════════════
       ║🎶 SONG DOWNLOAD 🎶
       ╠══════════════════════
@@ -39,9 +39,9 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
       ║Reply Required Format
       ╚══════════════════════
       
-      *1 |: AUDIO  MP3 TYPE 🎶*
-      *2 |: AUDIO  DOC TYPE 📂*
-      *3 |: AUDIO VOICE MODE 🎤*
+*1 |: AUDIO  MP3 TYPE 🎶*
+*2 |: AUDIO  DOC TYPE 📂*
+*3 |: AUDIO VOICE MODE 🎤*
 
 > *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*`;
 
