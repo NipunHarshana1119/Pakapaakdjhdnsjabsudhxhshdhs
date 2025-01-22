@@ -12,7 +12,7 @@ const {
 const commandDetails = {
   pattern: "song",
   desc: "Download Song",
-  react: "🎧",
+  react: "🎵",
   use: ".song <YouTube URL>",
   category: "download",
   filename: __filename,
@@ -29,7 +29,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoUrl = video.url;
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
-    const downloadMessage = `╭━━━〔 *𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃* 〕━━━╮
+    const downloadMessage = ``╭━━━〔 *𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃* 〕━━━╮
 
 * *รσɳɠ ԃαɯɳʅσαԃιɳɠ 🎧*
 
@@ -55,18 +55,18 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     );
 
     const messageContext = {
-      image: { url: video.thumbnail || "https://i.ibb.co/g98HkMY/8188.jpg" },
+      image: { url: video.thumbnail || "https://files.catbox.moe/p5ghv5.jpeg" },
       caption: downloadMessage,
       contextInfo: {
         mentionedJid: [sender],
         externalAdReply: {
           showAdAttribution: true,
           containsAutoReply: true,
-          title: "QUEEN RASHU MD ✵",
-          body: "❀ 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃",
+          title: "QUEEN SPRIKY MD",
+          body: "© 𝗤𝗨𝗘𝗘𝗡 𝗦𝗣𝗥𝗜𝗞𝗬 𝗠𝗗 ᵀᴹ",
           previewType: "PHOTO",
           thumbnail: thumbnailImage,
-          sourceUrl: "https://whatsapp.com/channel/0029Vb2GOyk6rsQwJSBa7T2h",
+          sourceUrl: "https://whatsapp.com/channel/0029VajvrA2ATRSkEnZwMQ0p",
           mediaType: 1,
         },
       },
@@ -97,7 +97,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   audio: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
+                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
                 },
                 { quoted: newMessage }
               );
@@ -110,7 +110,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   document: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
+                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
                 },
                 { quoted: newMessage }
               );
