@@ -34,7 +34,11 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
 * *QUEEN RASHU MD SONG DAWNLODER🎧*
 
 *╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
-*│* *Song Name :* ${videoTitle}
+*│* *Song Name :* _${videoTitle}_
+*│* *Duration :* _${yts.timestamp}_
+*│* *Views :* _${yts.views}_
+*│* *Author :* _${yts.author.name}_
+*|* *Link :* _${yts.url}_
 *╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
 
 * *Reply Required Format 👇*
