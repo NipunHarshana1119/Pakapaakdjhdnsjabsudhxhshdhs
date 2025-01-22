@@ -29,7 +29,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoUrl = video.url;
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
-    const downloadMessage = ``╭━━━〔 *𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃* 〕━━━╮
+    const downloadMessage = `╭━━━〔 *𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃* 〕━━━╮
 
 * *รσɳɠ ԃαɯɳʅσαԃιɳɠ 🎥*
 
