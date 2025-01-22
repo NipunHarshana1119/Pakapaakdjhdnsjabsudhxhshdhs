@@ -34,7 +34,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
 * *QUEEN RASHU MD SONG DAWNLODER🎧*
 
 *╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
-*│* *𝑺𝒐𝒏𝒈 𝑵𝒂𝒎𝒆 :* {videoTitle}
+*│* *Song Name :* ${videoTitle}
 *╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
 
 * *Reply Required Format 👇*
