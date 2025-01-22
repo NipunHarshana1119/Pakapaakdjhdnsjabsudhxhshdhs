@@ -38,7 +38,6 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
 *│* Duration : ${yts.timestamp}
 *│* Views : ${yts.views}
 *│* Author : ${yts.author.name}
-*|* Link : ${yts.url}
 *╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
 
 * *Reply Required Format 👇*
