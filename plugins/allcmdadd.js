@@ -844,8 +844,8 @@ cmd({
 // play2
 
 cmd({
-    pattern: "song",
-    alias: ["audio2","ytdl2","ytsong2"],
+    pattern: "song999999999999",
+    alias: ["audio255567788","ytdl245667889","ytsong2778000"],
     react: "🎧",
     desc: "Download Youtube song",
     category: "main",
