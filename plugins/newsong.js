@@ -29,7 +29,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoUrl = video.url;
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
-    const downloadMessage = `*● 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 ●*
+    const downloadMessage = `*╭╼╼╼╼╼╼╼╼ ● 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 ● ╼╼╼╼╼╼╼╼╮*
      
 * *QUEEN RASHU MD SONG DAWNLODER🎧*
 
@@ -49,23 +49,23 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
 
     const axiosOptions = { responseType: "arraybuffer" };
     const thumbnailImage = Buffer.from(
-      (await axios.get("https://files.catbox.moe/p5ghv5.jpeg", axiosOptions)).data,
+      (await axios.get("https://i.ibb.co/g98HkMY/8188.jpg", axiosOptions)).data,
       "binary"
     );
 
     const messageContext = {
-      image: { url: video.thumbnail || "https://files.catbox.moe/p5ghv5.jpeg" },
+      image: { url: video.thumbnail || "https://i.ibb.co/g98HkMY/8188.jpg" },
       caption: downloadMessage,
       contextInfo: {
         mentionedJid: [sender],
         externalAdReply: {
           showAdAttribution: true,
           containsAutoReply: true,
-          title: "QUEEN SPRIKY MD",
-          body: "© 𝗤𝗨𝗘𝗘𝗡 𝗦𝗣𝗥𝗜𝗞𝗬 𝗠𝗗 ᵀᴹ",
+          title: "QUEEN RASHU MD",
+          body: "© 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 𝐕1",
           previewType: "PHOTO",
           thumbnail: thumbnailImage,
-          sourceUrl: "https://whatsapp.com/channel/0029VajvrA2ATRSkEnZwMQ0p",
+          sourceUrl: "https://whatsapp.com/channel/0029Vb2GOyk6rsQwJSBa7T2h",
           mediaType: 1,
         },
       },
@@ -96,7 +96,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   audio: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
+                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
                 },
                 { quoted: newMessage }
               );
@@ -109,7 +109,7 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
                   document: { url: downloadLink },
                   mimetype: "audio/mpeg",
                   fileName: `${video.title}.mp3`,
-                  caption: "*© 𝚀𝚄𝙴𝙴𝙽 𝚂𝙿𝚁𝙸𝙺𝚈 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*",
+                  caption: "> *𝙿𝙾𝚆𝙴𝙰𝚁𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝚁𝙰𝚂𝙷𝚄 𝙼𝙳 ❀*",
                 },
                 { quoted: newMessage }
               );
