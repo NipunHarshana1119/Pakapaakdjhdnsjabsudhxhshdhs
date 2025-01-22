@@ -30,15 +30,18 @@ cmd(commandDetails, async (bot, message, args, { from, q, reply, sender }) => {
     const videoTitle = video.title.length > 20 ? video.title.substring(0, 20) + "..." : video.title;
 
     const downloadMessage = `*● 𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 ●*
-      ╔══════════════════════
-      ║🎶 SONG DOWNLOAD 🎶
-      ╠══════════════════════
-      ║🎧 Song Name - ${videoTitle}
-      ╠══════════════════════
-      ║⌛ Ready to Download 
-      ║Reply Required Format
-      ╚══════════════════════
-      
+     
+* *ꜱᴏɴɢ ᴅᴀᴡɴʟᴏᴀᴅᴇʀ 🎧*
+
+*╭╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
+*│* *𝑺𝒐𝒏𝒈 𝑵𝒂𝒎𝒆 : {videoTitle}*
+*│*
+*╰╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼ ✵*
+
+* *Reply Required Format 👇*
+
+*✵ ╼╼╼╼╼( ʀᴀꜱʜᴜ )╼╼╼╼╼ ✵*
+
 *1 |: AUDIO  MP3 TYPE 🎶*
 *2 |: AUDIO  DOC TYPE 📂*
 *3 |: AUDIO VOICE MODE 🎤*
