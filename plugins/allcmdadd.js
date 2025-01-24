@@ -2708,7 +2708,7 @@ let autoBioInterval;
 
 // 1. Set AutoBIO
 cmd({
-    pattern: "setautobio",
+    pattern: "setautobio123456",
     desc: "Enable or disable the AutoBIO feature.",
     category: "owner",
     react: "👨‍💻",
