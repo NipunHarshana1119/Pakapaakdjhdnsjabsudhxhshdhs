@@ -1339,7 +1339,7 @@ cmd({
 > ᴄʜᴀᴛ ᴊɪᴅ 
 │ ➽ *gjid*
 > ɢʀᴏᴜᴘ ᴊɪᴅ
-│ ➽ *update*
+│ ➽ *botupdate*
 > ʙᴏᴛ ᴜᴘᴅᴀᴛᴇ
 │ ➽ *updatecmd*
 > ᴜᴘᴅᴀᴛᴇ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ
@@ -1871,7 +1871,7 @@ reply('𝐐𝐔𝐄𝐄𝐍 𝐑𝐀𝐒𝐇𝐔 𝐌𝐃 Deleteing Message Succ
 cmd(
   {
     pattern: "restart",
-    alias: ["botupdate"],
+    alias: ["botupdate1111"],
     desc: "Restart the bot",
     category: "owner",
     react: "💢",
